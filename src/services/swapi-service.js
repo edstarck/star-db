@@ -1,4 +1,4 @@
-class SwapiService {
+export default class SwapiService {
   _apiBase = `https://swapi.co/api`;
 
   async getResource(url) {
@@ -38,8 +38,3 @@ class SwapiService {
     return this.getResource(`/starships/${id}/`);
   }
 }
-
-const swapi = new SwapiService();
-swapi.getPerson(3).then(person => {
-  console.log(person.name);
-});
