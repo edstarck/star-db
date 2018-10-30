@@ -12,7 +12,23 @@ export default class RandomPlanet extends Component {
   state = {
     planet: {},
     loading: true,
-    error: false,
+  };
+
+  componentDidMount() {
+    this.updatePlanet();
+    this.interval = setInterval(this.updatePlanet, 10000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  onPlanetLoaded = planet => {
+    this.setState({
+      planet,
+      loading: false,
+      error: false,
+    });
   };
 
   onError = err => {
@@ -20,10 +36,6 @@ export default class RandomPlanet extends Component {
       error: true,
       loading: false,
     });
-  };
-
-  onPlanetLoaded = planet => {
-    this.setState({ planet, loading: false, error: false });
   };
 
   updatePlanet = () => {
@@ -34,15 +46,6 @@ export default class RandomPlanet extends Component {
       .then(this.onPlanetLoaded)
       .catch(this.onError);
   };
-
-  componentDidMount() {
-    this.updatePlanet();
-    this.interval = setInterval(this.updatePlanet, 2500);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
 
   render() {
     const { planet, loading, error } = this.state;

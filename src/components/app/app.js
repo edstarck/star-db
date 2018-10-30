@@ -13,8 +13,10 @@ class App extends Component {
   };
 
   toggleRandomPlanet = () => {
-    this.setState({
-      showRandomPlanet: !this.state.showRandomPlanet,
+    this.setState(state => {
+      return {
+        showRandomPlanet: !state.showRandomPlanet,
+      };
     });
   };
 
