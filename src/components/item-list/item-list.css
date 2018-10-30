@@ -1,5 +1,7 @@
 .item-list {
   margin-bottom: 1rem;
+  background-color: #303030;
+  border-radius: 0.25rem;
 }
 
 .item-list .list-group-item {
