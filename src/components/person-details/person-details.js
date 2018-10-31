@@ -52,11 +52,11 @@ export default class PersonDetails extends Component {
     const context = hasDate ? <CardView person={person} /> : null;
 
     return (
-      <div className="person-details card">
+      <section className="person-details card">
         {primaryText}
         {spiner}
         {context}
-      </div>
+      </section>
     );
   }
 }
