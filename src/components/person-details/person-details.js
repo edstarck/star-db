@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
+import ErrorButton from '../error-button/error-button';
 import Spiner from '../spiner';
 
 import './person-details.css';
@@ -87,6 +88,7 @@ const CardView = props => {
             <span>{eyeColor}</span>
           </li>
         </ul>
+        <ErrorButton />
       </div>
     </React.Fragment>
   );
