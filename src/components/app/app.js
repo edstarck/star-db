@@ -23,6 +23,7 @@ class App extends Component {
   onPersonSelected = id => {
     this.setState({
       selectedPerson: id,
+      loading: true,
     });
   };
 
@@ -46,7 +47,10 @@ class App extends Component {
             <ItemList onItemSelected={this.onPersonSelected} />
           </aside>
           <article className="col-md-6">
-            <PersonDetails personId={this.state.selectedPerson} />
+            <PersonDetails
+              personId={this.state.selectedPerson}
+              loading={this.state.loading}
+            />
           </article>
         </main>
       </div>
