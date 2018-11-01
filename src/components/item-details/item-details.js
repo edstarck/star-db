@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import SwapiService from '../../services/swapi-service';
 import ErrorButton from '../error-button/error-button';
 import Spiner from '../spiner';
 
 import './item-details.css';
 
 export default class ItemDetails extends Component {
-  swapiService = new SwapiService();
-
   state = {
     item: null,
     image: null,
